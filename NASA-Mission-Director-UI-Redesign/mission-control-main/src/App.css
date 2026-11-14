@@ -1,0 +1,46 @@
+/* Mission Director visual refresh — presentation only. */
+
+.brand-mark {
+  width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center;
+  border: 1px solid rgba(85, 214, 232, .55); border-radius: 12px;
+  color: #07111f; background: linear-gradient(145deg, #8af0f2, #4d9fe8);
+  box-shadow: 0 0 22px rgba(85, 214, 232, .20); font-size: 12px; font-weight: 900; letter-spacing: -.06em;
+}
+.brand-title { color: #eaf6ff; font-size: 12px; font-weight: 900; letter-spacing: .14em; line-height: 1.2; }
+.brand-subtitle { color: #7f9bb5; font-size: 8px; font-weight: 700; letter-spacing: .13em; margin-top: 3px; }
+
+/* Give the existing narrow game layout a more spacious command-console feel. */
+.max-w-2xl { max-width:  min(100% - 32px, 960px) !important; }
+.min-h-screen { background: transparent; }
+.backdrop-blur-md.bg-black\/40 {
+  background: rgba(5, 15, 27, .82) !important;
+  border-bottom: 1px solid rgba(103, 179, 218, .22) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .18);
+}
+.bg-white\/5 { background: var(--panel) !important; }
+.bg-white\/10 { background: rgba(37, 66, 94, .38) !important; }
+.border-white\/10 { border-color: var(--line) !important; }
+.border-white\/20 { border-color: rgba(116, 171, 213, .32) !important; }
+.rounded-2xl { border-radius: 18px !important; }
+.rounded-xl { border-radius: 13px !important; }
+
+/* Existing panels and cards get a restrained glass surface. */
+.bg-white\/5.border, .bg-white\/10.border {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .025);
+  backdrop-filter: blur(12px);
+}
+button { transition: background-color .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+button:not(:disabled):hover { filter: brightness(1.09); }
+button:not(:disabled):active { transform: translateY(1px); }
+button:focus-visible { outline: 2px solid #55d6e8; outline-offset: 3px; }
+input, textarea, select {
+  color: #e8f1ff !important; background: rgba(5, 16, 29, .82) !important;
+  border-color: rgba(116, 171, 213, .28) !important; border-radius: 10px;
+}
+
+/* Keep the mobile game navigation comfortable on small screens. */
+@media (max-width: 640px) {
+  .max-w-2xl { max-width: calc(100% - 20px) !important; }
+  .brand-title { font-size: 10px; letter-spacing: .10em; }
+  .brand-subtitle { font-size: 7px; }
+}
